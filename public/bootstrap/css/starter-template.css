@@ -1,0 +1,11 @@
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+  //text-align: center;
+}
+.starter-template div {
+  padding: 10px 5px;
+  margin:5px;
+}

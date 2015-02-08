@@ -1,0 +1,31 @@
+%div{:class=>"container"}
+  %div{:class=>"starter-template"}
+    .lead
+      分析キューを登録する。。
+    %form{:method => "POST", :action => './confirm',:rel=>"external"}
+      %div
+        開始日時：
+        %input{:type => "text", :name => "starttime",:value=>"#{@starttime}"} (YYYYMMDDhhmm)
+      %div
+        終了日時：
+        %input{:type => "text", :name => "endtime",:value=>"#{@endtime}"} (YYYYMMDDhhmm)
+        -if @@errormessage != nil
+          %div{:class=>"alert alert-danger"}
+            %strong #{@@errormessage}
+            -@@errormessage=nil
+      %div
+        対象通貨
+        %select{:name => "meigara"}
+          %OPTION{:value=>"USDJPY",:selected=>''}USDJPY
+          %OPTION{:value=>"EURJPY"}EURJPY
+          %OPTION{:value=>"GBPJPY"}GBPJPY
+          %OPTION{:value=>"AUDJPY"}AUDJPY
+          %OPTION{:value=>"NZDJPY"}NZDJPY
+          %OPTION{:value=>"CADJPY"}CADJPY
+          %OPTION{:value=>"CHFJPY"}CHFJPY
+          %OPTION{:value=>"ZARJPY"}ZARJPY
+          %OPTION{:value=>"EURUSD"}EURUSD
+          %OPTION{:value=>"GBPUSD"}GBPUSD
+          %OPTION{:value=>"AUDUSD"}AUDUSD
+      %div
+        %input{:class=>"btn btn-primary btn-lg",:role=>"button",:type => "submit",:value=>"確認"}

@@ -1,0 +1,28 @@
+%div{:class=>"container"}
+  %div{:class=>"starter-template"}
+    %table{:class=>"table table-striped"}
+      %thead
+        %tr
+          %td 
+            %strong date
+          %td
+            %strong meigara
+          %td
+            %strong starttime
+          %td
+            %strong endtime
+          %td
+            %strong Queue
+      %tbody
+        -@sets.each do |row|
+          %tr
+            %td #{(row['registryTime']+60*60*9).strftime("%Y-%m-%d %H:%M")}
+            %td #{row['meigara']}
+            %td #{(row['startTime']+60*60*9).strftime("%Y-%m-%d %H:%M:%S")}
+            %td #{(row['endTime']+60*60*9).strftime("%Y-%m-%d %H:%M:%S")}
+            -if row['status'] == 0
+              %td waiting
+            -elsif row['status'] == -1
+              %td Processing
+            -else
+              %td complete

@@ -1,0 +1,34 @@
+%script{:src=>"./jquery.min.js"}
+%script{:src=>"main.js"}
+%script{:src=>"./ccchart.js"}
+%link{:href=>"./base.css",:rel=>"stylesheet"}
+
+銘柄：
+%SELECT{:id=>"meigara",:name=>"meigara"}
+  %OPTION{:value=>"USDJPY",:selected=>''}USDJPY
+  %OPTION{:value=>"EURJPY"}EURJPY
+  %OPTION{:value=>"GBPJPY"}GBPJPY
+  %OPTION{:value=>"AUDJPY"}AUDJPY
+  %OPTION{:value=>"NZDJPY"}NZDJPY
+  %OPTION{:value=>"CADJPY"}CADJPY
+  %OPTION{:value=>"CHFJPY"}CHFJPY
+  %OPTION{:value=>"ZARJPY"}ZARJPY
+  %OPTION{:value=>"EURUSD"}EURUSD
+  %OPTION{:value=>"GBPUSD"}GBPUSD
+  %OPTION{:value=>"AUDUSD"}AUDUSD
+%br
+
+開始時刻(yyyymmddhhmmss) : 
+%input{:id =>"yyyymmddhhmmss",:value=>"#{@starttime}", :type=>"number"}
+更新速度：
+%SELECT{:id=>"speed",:name=>"speed"}
+  %OPTION{:value=>"4"}x1/4
+  %OPTION{:value=>"2"}x1/2
+  %OPTION{:value=>"1",:selected=>''}x1
+  %OPTION{:value=>"0.5"}x2
+  %OPTION{:value=>"0.25"}x4
+  %OPTION{:value=>"0.1"}x10
+  %OPTION{:value=>"0.01"}x100
+%br
+%div{:id=>"msg"}
+

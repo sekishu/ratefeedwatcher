@@ -1,0 +1,6 @@
+baseurl: http://localhost:4567/
+mail:
+ host: smtp.gmail.com
+ port: 465
+ address: hoge@gmail.com
+ password: password

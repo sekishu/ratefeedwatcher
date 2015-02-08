@@ -1,0 +1,8 @@
+*~
+*png
+*csv
+*.log*1
+main.js
+setting.yaml
+log/*
+vendor/

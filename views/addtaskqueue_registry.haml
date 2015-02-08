@@ -1,0 +1,16 @@
+%div{:class=>"container"}
+  %div{:class=>"starter-template"}
+    .lead
+      下記の分析キューを登録しました。
+    %div
+      開始日時：#{@regparam[:starttime]}
+    %div
+      終了日時：#{@regparam[:endtime]}
+    %div
+      対象通貨：#{@regparam[:meigara]}
+    %div
+      %button{:type=>"button",:class=>"btn btn-default btn-lg btn-block"}
+        %a{:href=>"/addtaskqueue/"} More Add queues
+    %div
+      %button{:type=>"button",:class=>"btn btn-default btn-lg btn-block"}
+        %a{:href=>"/taskqueuemanage/"} Task Queue Manage

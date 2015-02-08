@@ -1,0 +1,16 @@
+%div{:class=>"container"}
+  %div{:class=>"starter-template"}
+    .lead
+      この分析キューを登録しましすか？
+    %form{:method => "POST", :action => './registry',:rel=>"external"}
+      %div
+        開始日時：#{@@confirmparam[:starttime]}
+      %div
+        終了日時：#{@@confirmparam[:endtime]}
+      %div
+        対象通貨：#{@@confirmparam[:meigara]}
+      %div
+        %input{:type=>"hidden",:name=>"starttime",:value=>"#{@@confirmparam[:starttime]}"}
+        %input{:type=>"hidden",:name=>"endtime",  :value=>"#{@@confirmparam[:endtime]}"}
+        %input{:type=>"hidden",:name=>"meigara",:value=>"#{@@confirmparam[:meigara]}"}
+        %input{:class=>"btn btn-primary btn-lg",:role=>"button",:type => "submit",:value=>"登録"}

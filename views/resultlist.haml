@@ -1,0 +1,43 @@
+%div{:class=>"container"}
+  %div{:class=>"starter-template"}
+    %table{:class=>"table table-striped"}
+      %thead
+        %tr
+          %td 
+            %strong date
+          %td
+            %strong meigara
+          %td 
+            %strong start
+          %td 
+            %strong end
+          %td
+            %strong data </br>(CSV)
+          %td
+            %strong spread each </br>(IMG)
+          %td
+            %strong spread full </br>(IMG)
+          %td
+            %strong mean rate </br>(IMG)
+      %tbody
+        -@sets.each do |row|
+          %tr
+            %td #{(row['date']+60*60*9).strftime("%Y-%m-%d")} 
+            %td #{row['meigara']}
+            %td #{(row['starttime']+60*60*9).strftime("%Y-%m-%d %H:%M")} 
+            %td #{(row['endtime']+60*60*9).strftime("%Y-%m-%d %H:%M")} 
+            %td 
+              %a{:href=>"#{@urlbase+'csv/'+row['csvfile']}"}
+                %i{:class=>"glyphicon glyphicon-download-alt"}
+            %td 
+              %a{:href=>"#{@urlbase+'img/'+row['eachimgfile']}"}
+                %i{:class=>"glyphicon glyphicon-download-alt"}
+            %td 
+              %a{:href=>"#{@urlbase+'img/'+row['fullimgfile']}"}
+                %i{:class=>"glyphicon glyphicon-download-alt"}
+            %td
+              -if row['meanimgfile']!=nil
+                %a{:href=>"#{@urlbase+'img/'+row['meanimgfile']}"}
+                  %i{:class=>"glyphicon glyphicon-download-alt"}
+              -else
+                -
