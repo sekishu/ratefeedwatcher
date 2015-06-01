@@ -486,6 +486,7 @@ EM::run do
 	CrawlRate_sbifxt.new("sbifxt-web","https://trade.sbifxt.co.jp/api_fxt/HttpApi/Rate.aspx?GUID=RATE1355641201633&AMOUNT=1")
 	CrawlRate_sbifxt.new("sbifxt100-web","https://trade.sbifxt.co.jp/api_fxt/HttpApi/Rate.aspx?GUID=RATE1355641201633&AMOUNT=1000000")
 	CrawlRate_gmoclick.new("gmoclick-web","https://www.click-sec.com/data/fx/rate/rate.csv")
+	CrawlRate_gmoclick.new("gmoclickDemo-web","https://fx-demo.click-sec.com/ygmo/rate.csv")
 	CrawlRate_ca2.new("cyber-web2","http://rate.gaikaex.net/quote.txt")
 	CrawlRate_dmm.new("dmm-web","https://trade.fx.dmm.com/fxcbroadcast/rpc/FxCPullBsController")
 	CrawlRate_hirose.new("hirose-web1","http://hirose-fx.co.jp/currencyExchangeFlashDeveloper/fla_connect2/get_quotes.php")
